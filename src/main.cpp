@@ -11,7 +11,7 @@ ez::Drive chassis(
     {2, 11},     // Left Chassis Ports 
     {-20, -10},  // Right Chassis Ports 
 
-    5,      // IMU Port
+    13,      // IMU Port
     3.875,  // Wheel Diameter (Remember, 4" wheels without screw holes are actually 4.125!)
     450);   // Wheel RPM = cartridge * (motor gear / wheel gear)
 
@@ -58,8 +58,8 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-      {"Drive\n\nDrive forward and come back", drive_example},
-      {"Turn\n\nTurn 3 times.", turn_example},
+     {"Drive\n\nDrive forward and come back", drive_example},   
+      {"Turn\n\nTurn 3 times.", turn_example},  
       {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
       {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
       {"Swing Turn\n\nSwing in an 'S' curve", swing_example},
@@ -266,12 +266,9 @@ if (master.get_digital(DIGITAL_L1)) {
       sixbar1.move(0);
     }
 
-
-
     if (master.get_digital_new_press(DIGITAL_R1)) {
       claw.set(!claw.get());
     }
-
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
   }
