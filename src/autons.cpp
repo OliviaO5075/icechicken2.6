@@ -441,7 +441,7 @@ void motion_chaining() {
   sixbar1.move(0);
   pros::delay(250);
 
-  chassis.pid_drive_set(-3.5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-4_in, DRIVE_SPEED);
   chassis.pid_wait();
   pros::delay(50);
 
@@ -528,7 +528,7 @@ void combining_movements() {
   chassis.pid_drive_set(5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(-11_deg, TURN_SPEED);
+  chassis.pid_turn_set(-13_deg, TURN_SPEED);
   chassis.pid_wait();
 
   sixbar.move(127);
@@ -538,23 +538,23 @@ void combining_movements() {
   sixbar1.move(0);
   pros::delay(250);
 
-  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-5.5_in, DRIVE_SPEED);
   chassis.pid_wait();
   pros::delay(50);
 
   claw.set(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(-93_deg, TURN_SPEED);
+  chassis.pid_turn_set(-68_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(7_in, DRIVE_SPEED);
+  chassis.pid_drive_set(1.5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(-123_deg, TURN_SPEED);
+  chassis.pid_turn_set(-134_deg, TURN_SPEED);
   chassis.pid_wait();
 
   chassis.pid_drive_set(5_in, DRIVE_SPEED);
@@ -568,7 +568,7 @@ void combining_movements() {
 
   sixbar.move(-127);
   sixbar1.move(-127);
-  pros::delay(700);
+  pros::delay(800);
   sixbar.move(0);
   sixbar1.move(0);
   pros::delay(250);
@@ -576,14 +576,15 @@ void combining_movements() {
   chassis.pid_turn_set(-95_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-15_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(-52_deg, TURN_SPEED);
+  chassis.pid_turn_set(-54_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(8_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
+  pros::delay(500);
 
   sixbar.move(127);
   sixbar1.move(127);
