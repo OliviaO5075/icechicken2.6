@@ -58,13 +58,13 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-    {"Turn\n\nTurn 3 times.", turn_example},      
-      {"Drive\n\nDrive forward and come back", drive_example},   
-      {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
-      {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
-      {"Swing Turn\n\nSwing in an 'S' curve", swing_example},
-      {"Motion Chaining\n\nDrive forward, turn, and come back, but blend everything together :D", motion_chaining},
-      {"Combine all 3 movements", combining_movements},
+    {"new auto strat (right)", combining_movements},
+      {"new auto strat (left)", motion_chaining},
+      {"left side", drive_example}, 
+      {"right side.", turn_example},  
+      {"left side with park for skills", drive_and_turn},
+      {"no auto", wait_until_change_speed},
+      {"park ONLYauto", swing_example},
       {"Interference\n\nAfter driving forward, robot performs differently if interfered or not", interfered_example},
       {"Simple Odom\n\nThis is the same as the drive example, but it uses odom instead!", odom_drive_example},
       {"Pure Pursuit\n\nGo to (0, 30) and pass through (6, 10) on the way.  Come back to (0, 0)", odom_pure_pursuit_example},

@@ -62,65 +62,60 @@ void drive_example() {
   sixbar.move(0);
   sixbar1.move(0);
 
-  chassis.pid_drive_set(10_in, DRIVE_SPEED);
+  chassis.pid_drive_set(11_in, DRIVE_SPEED);
   chassis.pid_wait();
 
   chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(10_in, DRIVE_SPEED);
+  chassis.pid_drive_set(9.5_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  sixbar.move(127);
-  sixbar1.move(127);
-  pros::delay(1000);
-  sixbar.move(0);
-  sixbar1.move(0);
-
   // score pre load
-  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
    
   sixbar.set_brake_mode(MOTOR_BRAKE_HOLD);
   sixbar1.set_brake_mode(MOTOR_BRAKE_HOLD); 
 
-  sixbar.move(-127);
-  sixbar1.move(-127);
-  pros::delay(50);
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(300);
   sixbar.move(0);
   sixbar1.move(0);
 
   chassis.pid_swing_set(ez::LEFT_SWING, -90_deg, -110, -45);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_drive_set(18_in, DRIVE_SPEED);
+  chassis.pid_drive_set(20_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-2.5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-3.5_in, DRIVE_SPEED);
   chassis.pid_wait();
-
-  claw.set(true);
-  pros::delay(750);
 
   sixbar.move(127);
   sixbar1.move(127);
-  pros::delay(200);
+  pros::delay(650);
   sixbar.move(0);
   sixbar1.move(0);
 
-  // get wall stack
-  chassis.pid_drive_set(-4_in, DRIVE_SPEED);
+  claw.set(true);
+  pros::delay(100);
+
+  // // get wall stack
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
-  chassis.pid_turn_set(-42_deg, TURN_SPEED);
+
+  chassis.pid_turn_set(-40_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(15_in, DRIVE_SPEED);
+  chassis.pid_drive_set(18_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   chassis.pid_turn_set(-20_deg, 110);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(6_in, 50);
+  chassis.pid_drive_set(3_in, 50);
   chassis.pid_wait();
 
   claw.set(false);
@@ -166,22 +161,6 @@ void drive_example() {
   chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  // //get other wall stack
-  // chassis.pid_drive_set(-32_in, DRIVE_SPEED);
-  // chassis.pid_wait_quick_chain();
-
-  // sixbar.move(127);
-  // sixbar1.move(127);
-  // pros::delay(300);
-  // sixbar.move(0);
-  // sixbar1.move(0);
-
-  // chassis.pid_turn_set(30_deg, TURN_SPEED);
-  // chassis.pid_wait_quick_chain();
-
-  // chassis.pid_drive_set(8_in, DRIVE_SPEED);
-  // chassis.pid_wait();
-
 }
 
 
@@ -196,59 +175,60 @@ void turn_example() {
   sixbar.move(0);
   sixbar1.move(0);
 
-  chassis.pid_drive_set(10_in, DRIVE_SPEED);
+  chassis.pid_drive_set(11_in, DRIVE_SPEED);
   chassis.pid_wait();
 
   chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(10_in, DRIVE_SPEED);
+  chassis.pid_drive_set(9.5_in, DRIVE_SPEED);
   chassis.pid_wait();
 
   // score pre load
-  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
+
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(300);
+  sixbar.move(0);
+  sixbar1.move(0);
    
   sixbar.set_brake_mode(MOTOR_BRAKE_HOLD);
   sixbar1.set_brake_mode(MOTOR_BRAKE_HOLD); 
 
-  sixbar.move(127);
-  sixbar1.move(127);
-  pros::delay(1000);
-  sixbar.move(0);
-  sixbar1.move(0);
-
   chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, -45, -110);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_drive_set(19_in, DRIVE_SPEED);
+  chassis.pid_drive_set(30_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-2.5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-3.5_in, DRIVE_SPEED);
   chassis.pid_wait();
-
-  claw.set(true);
-  pros::delay(750);
 
   sixbar.move(127);
   sixbar1.move(127);
-  pros::delay(200);
+  pros::delay(650);
   sixbar.move(0);
   sixbar1.move(0);
 
+  claw.set(true);
+  pros::delay(500);
+
   // get wall stack
-  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
+
   chassis.pid_turn_set(42_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(17_in, DRIVE_SPEED);
+  chassis.pid_drive_set(18_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   chassis.pid_turn_set(20_deg, 110);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(4_in, 50);
+  chassis.pid_drive_set(3_in, 50);
   chassis.pid_wait();
 
   claw.set(false);
@@ -268,7 +248,7 @@ void turn_example() {
   chassis.pid_turn_set(37_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-22_in, 127);
+  chassis.pid_drive_set(-21_in, 127);
   chassis.pid_wait_quick_chain();
 
   sixbar.move(-127);
@@ -280,7 +260,7 @@ void turn_example() {
   chassis.pid_turn_set(90_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(10_in, DRIVE_SPEED);
+  chassis.pid_drive_set(9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
   sixbar.move(127);
@@ -338,7 +318,7 @@ void drive_and_turn() {
   chassis.pid_drive_set(18_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-2.5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
   chassis.pid_wait();
 
   claw.set(true);
@@ -419,27 +399,7 @@ void drive_and_turn() {
 // Wait Until and Changing Max Speed
 ///
 void wait_until_change_speed() {
-  // pid_wait_until will wait until the robot gets to a desired position
-
-  // When the robot gets to 6 inches slowly, the robot will travel the remaining distance at full speed
-  chassis.pid_drive_set(24_in, 30, true);
-  chassis.pid_wait_until(6_in);
-  chassis.pid_speed_max_set(DRIVE_SPEED);  // After driving 6 inches at 30 speed, the robot will go the remaining distance at DRIVE_SPEED
-  chassis.pid_wait();
-
-  chassis.pid_turn_set(45_deg, TURN_SPEED);
-  chassis.pid_wait();
-
-  chassis.pid_turn_set(-45_deg, TURN_SPEED);
-  chassis.pid_wait();
-
-  chassis.pid_turn_set(0_deg, TURN_SPEED);
-  chassis.pid_wait();
-
-  // When the robot gets to -6 inches slowly, the robot will travel the remaining distance at full speed
-  chassis.pid_drive_set(-24_in, 30, true);
-  chassis.pid_wait_until(-6_in);
-  chassis.pid_speed_max_set(DRIVE_SPEED);  // After driving 6 inches at 30 speed, the robot will go the remaining distance at DRIVE_SPEED
+  chassis.pid_drive_set(0_in, DRIVE_SPEED);
   chassis.pid_wait();
 }
 
@@ -447,21 +407,7 @@ void wait_until_change_speed() {
 // Swing Example
 ///
 void swing_example() {
-  // The first parameter is ez::LEFT_SWING or ez::RIGHT_SWING
-  // The second parameter is the target in degrees
-  // The third parameter is the speed of the moving side of the drive
-  // The fourth parameter is the speed of the still side of the drive, this allows for wider arcs
-
-  chassis.pid_swing_set(ez::LEFT_SWING, 45_deg, SWING_SPEED, 45);
-  chassis.pid_wait();
-
-  chassis.pid_swing_set(ez::RIGHT_SWING, 0_deg, SWING_SPEED, 45);
-  chassis.pid_wait();
-
-  chassis.pid_swing_set(ez::RIGHT_SWING, 45_deg, SWING_SPEED, 45);
-  chassis.pid_wait();
-
-  chassis.pid_swing_set(ez::LEFT_SWING, 0_deg, SWING_SPEED, 45);
+  chassis.pid_drive_set(73_in, DRIVE_SPEED);
   chassis.pid_wait();
 }
 
@@ -469,44 +415,182 @@ void swing_example() {
 // Motion Chaining
 ///
 void motion_chaining() {
-  // Motion chaining is where motions all try to blend together instead of individual movements.
-  // This works by exiting while the robot is still moving a little bit.
-  // To use this, replace pid_wait with pid_wait_quick_chain.
-  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
-  chassis.pid_wait();
+  sixbar.set_brake_mode(MOTOR_BRAKE_HOLD);
+  sixbar1.set_brake_mode(MOTOR_BRAKE_HOLD); 
 
-  chassis.pid_turn_set(45_deg, TURN_SPEED);
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(-45_deg, TURN_SPEED);
+  sixbar.move(-127);
+  sixbar1.move(-127);
+  pros::delay(250);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_turn_set(9_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  // Your final motion should still be a normal pid_wait
-  chassis.pid_drive_set(-24_in, DRIVE_SPEED, true);
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(250);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
   chassis.pid_wait();
+  pros::delay(50);
+
+  claw.set(true);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(93_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(7_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(123_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  claw.set(false);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  sixbar.move(-127);
+  sixbar1.move(-127);
+  pros::delay(700);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_turn_set(95_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(50_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(4_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(600);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(50);
+
+  claw.set(true);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-11_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
 }
 
 ///
 // Auto that tests everything
 ///
 void combining_movements() {
-  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
+  sixbar.set_brake_mode(MOTOR_BRAKE_HOLD);
+  sixbar1.set_brake_mode(MOTOR_BRAKE_HOLD); 
+
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  sixbar.move(-127);
+  sixbar1.move(-127);
+  pros::delay(250);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(-11_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(45_deg, TURN_SPEED);
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(250);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_wait();
+  pros::delay(50);
+
+  claw.set(true);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_swing_set(ez::RIGHT_SWING, -45_deg, SWING_SPEED, 45);
+  chassis.pid_turn_set(-93_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(0_deg, TURN_SPEED);
+  chassis.pid_drive_set(7_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(-123_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-24_in, DRIVE_SPEED, true);
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  claw.set(false);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  sixbar.move(-127);
+  sixbar1.move(-127);
+  pros::delay(700);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(250);
+
+  chassis.pid_turn_set(-95_deg, TURN_SPEED);
   chassis.pid_wait();
+
+  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(-52_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  sixbar.move(127);
+  sixbar1.move(127);
+  pros::delay(600);
+  sixbar.move(0);
+  sixbar1.move(0);
+  pros::delay(50);
+
+  claw.set(true);
+  pros::delay(500);
+
+  chassis.pid_drive_set(-11_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
 }
 
 ///
