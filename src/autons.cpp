@@ -454,7 +454,7 @@ void motion_chaining() {
   chassis.pid_turn_set(56_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(4_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   chassis.pid_turn_set(125_deg, TURN_SPEED);
@@ -485,13 +485,13 @@ void motion_chaining() {
   chassis.pid_turn_set(95_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-17_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-20_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   chassis.pid_turn_set(58_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(6_in, DRIVE_SPEED);
+  chassis.pid_drive_set(8_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   sixbar.move(127);
