@@ -431,7 +431,7 @@ void motion_chaining() {
   chassis.pid_drive_set(5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(9_deg, TURN_SPEED);
+  chassis.pid_turn_set(10_deg, TURN_SPEED);
   chassis.pid_wait();
 
   sixbar.move(127);
@@ -441,33 +441,39 @@ void motion_chaining() {
   sixbar1.move(0);
   pros::delay(250);
 
-  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-3.5_in, DRIVE_SPEED);
   chassis.pid_wait();
   pros::delay(50);
 
   claw.set(true);
   pros::delay(500);
 
-  chassis.pid_drive_set(-5_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-9_in, DRIVE_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_turn_set(93_deg, TURN_SPEED);
-  chassis.pid_wait();
-
-  chassis.pid_drive_set(7_in, DRIVE_SPEED);
-  chassis.pid_wait_quick_chain();
-
-  chassis.pid_turn_set(123_deg, TURN_SPEED);
+  chassis.pid_turn_set(56_deg, TURN_SPEED);
   chassis.pid_wait();
 
   chassis.pid_drive_set(5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
+  chassis.pid_turn_set(125_deg, TURN_SPEED);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(6_in, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+
+  // chassis.pid_turn_set(132_deg, TURN_SPEED);
+  // chassis.pid_wait();
+
   claw.set(false);
   pros::delay(500);
 
-  chassis.pid_drive_set(-3_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-1.5_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
+
+  chassis.pid_turn_set(127_deg, TURN_SPEED);
+  chassis.pid_wait();
 
   sixbar.move(-127);
   sixbar1.move(-127);
@@ -479,13 +485,13 @@ void motion_chaining() {
   chassis.pid_turn_set(95_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(-13_in, DRIVE_SPEED);
+  chassis.pid_drive_set(-17_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
-  chassis.pid_turn_set(50_deg, TURN_SPEED);
+  chassis.pid_turn_set(58_deg, TURN_SPEED);
   chassis.pid_wait();
 
-  chassis.pid_drive_set(4_in, DRIVE_SPEED);
+  chassis.pid_drive_set(6_in, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
 
   sixbar.move(127);
